@@ -13,7 +13,7 @@ const generateContacts = async (number) => {
         .then(data => {
             const arr = JSON.parse(data);
             const newArr = arr.concat(users);
-            fs.writeFile(PATH_DB, JSON.stringify(newArr, undefined, 2)).then(console.log).catch(console.error);
+            fs.writeFile(PATH_DB, JSON.stringify(newArr, undefined, 2)).then(data=>data).catch(console.error);
         })
         .catch(console.error);
 };

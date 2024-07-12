@@ -8,7 +8,7 @@ export const addOneContact = async () => {
         .then(data => {
             const arr = JSON.parse(data);
             arr.push(user);
-            fs.writeFile(PATH_DB, JSON.stringify(arr, undefined, 2)).then(console.log).catch(console.error);
+            fs.writeFile(PATH_DB, JSON.stringify(arr, undefined, 2)).then(data=>data).catch(console.error);
         })
         .catch(console.error);
 };
